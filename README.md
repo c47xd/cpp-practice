@@ -1,6 +1,6 @@
 # cpp-practice
 These are the practice problems i did/doing .
-# Practice 1 (conditions):
+# Practice 1 (conditions) #p1(conditions).cpp  :
 The Challenge: “Three-Door Heist Logic Simulator”
 
 You’re a thief trying to open a vault with three security doors. Each door uses a different rule.
