@@ -38,4 +38,4 @@ Grid-size and iteration management per pattern
 Terminal animation using screen clear and timed delays
 ## Files  
 - [door_logic.cpp](door_logic.cpp)  
-- [Game_Of_life.cpp](GameOfLifeCli)
+- [Game_Of_life.cpp](pattern_generator.cpp)
