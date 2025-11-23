@@ -36,6 +36,20 @@ Multiple predefined classic Game of Life patterns
 Grid-size and iteration management per pattern
 
 Terminal animation using screen clear and timed delays
+
+# C++ BigInt Subtraction
+
+A raw implementation of Large Integer subtraction using C++ character arrays. This program handles numbers far larger than standard `long long` limits by manipulating them as strings.
+
+## Features
+- **Arbitrary Precision**: Can subtract numbers up to ~1000 digits.
+- **Negative Support**: Correctly calculates results where `B > A` (e.g., `10 - 20 = -10`).
+- **Manual Logic**: Implements "borrowing" and string manipulation manually without external BigInt libraries.
+
+
+
+
 ## Files  
 - [door_logic.cpp](door_logic.cpp)  
 - [Game_Of_life.cpp](pattern_generator.cpp)
+- [Bigint_subtraction](bigint_subtraction.cpp)
