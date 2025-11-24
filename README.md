@@ -1,55 +1,72 @@
-# cpp-practice
-These are the practice problems i did/doing .
-# Practice 1 (else-if ladder) :
+# 🚀 C++ Learning Journey
 
-  Door 1 — The Prime Door  
-  Opens only if A is prime and A < B.  
-  If A is 1 or negative → auto-fail.  
-  Door 2 — The Parity Trap  
-  Opens if B and C have different parity (one even, one odd) AND (B + C) is divisible by 3  
-  Door 3 — The “Devil’s XOR” Door Opens if exactly one of the following is true:  
-  A > 50 , C is a perfect square , B is between 10 and 20 (inclusive)  
-  If more than one is true → fails. If none true → fails.  
-# Practice 2 (Arrays)
-  This program implements Conway’s Game of Life using a two-dimensional character grid. Each cell has two possible states: alive (*) or dead (.). The simulation  evolves in discrete time steps based on the following rules applied to every cell simultaneously:
+A collection of my weekly C++ practice projects, focusing on data structures, algorithms, and low-level logic implementation. This repository tracks my progress from basic control flow to complex memory manipulation.
 
-Count the eight neighboring cells.
+## 📂 Repository Contents
 
-If the current cell is alive:
+| Project | Type | Key Concepts |
+| :--- | :--- | :--- |
+| [**BigInt Subtraction**](#1-bigint-subtraction-custom-implementation) | Algorithm | Strings, Arbitrary Precision Arithmetic, Memory Management |
+| [**Conway's Game of Life**](#2-conways-game-of-life-simulation) | Simulation | 2D Arrays, Buffer Grids, Terminal Animation |
+| [**The Three Doors**](#3-the-three-doors-logic-puzzles) | Logic Puzzle | Conditional Logic, Bitwise Operations, Mathematical Constraints |
 
-It survives if it has exactly 2 or 3 living neighbors.
+---
 
-Otherwise, it dies (underpopulation or overpopulation).
+## 1. BigInt Subtraction (Custom Implementation)
+**File:** [`bigint_subtraction.cpp`](bigint_subtraction.cpp)
 
-If the current cell is dead:
+A raw implementation of Large Integer subtraction using C++ character arrays. This program bypasses standard `long long` limits by treating numbers as strings, allowing for calculations on massive figures.
 
-It becomes alive only if it has exactly 3 living neighbors (reproduction).
+### ✨ Features
+- **Arbitrary Precision:** Capable of subtracting numbers with up to ~1000 digits.
+- **Negative Support:** Correctly handles scenarios where `B > A` (e.g., `10 - 20 = -10`).
+- **Manual Arithmetic:** Implements "borrowing" logic manually without external BigInt libraries.
 
-A temporary buffer grid is used to store the next generation to avoid modifying the current generation while still evaluating it.
+---
 
-The final state is printed frame-by-frame, creating an animation effect.
+## 2. Conway's Game of Life (Simulation)
+**File:** [`pattern_generator.cpp`](pattern_generator.cpp)
 
-Additionally, this implementation includes:
+A terminal-based implementation of **Conway’s Game of Life**. The simulation evolves in discrete time steps using a double-buffer system (current/next generation) to ensure simultaneous cell updates.
 
-Multiple predefined classic Game of Life patterns
+### 🕹️ How It Works
+- **Rules:**
+  - **Survival:** Alive cells with 2 or 3 neighbors stay alive.
+  - **Death:** Cells die from underpopulation (<2 neighbors) or overpopulation (>3 neighbors).
+  - **Reproduction:** Dead cells with exactly 3 neighbors become alive.
+- **Visuals:** Uses `*` for alive cells and `.` for dead cells.
+- **Animation:** Includes frame clearing and time delays for a smooth terminal animation effect.
 
-Grid-size and iteration management per pattern
+---
 
-Terminal animation using screen clear and timed delays
+## 3. The Three Doors (Logic Puzzles)
+**File:** [`door_logic.cpp`](door_logic.cpp)
 
-# C++ BigInt Subtraction
+A compiled challenge focusing on complex `else-if` ladders and boolean logic. The program simulates three distinct "doors," each requiring specific mathematical conditions to open.
 
-A raw implementation of Large Integer subtraction using C++ character arrays. This program handles numbers far larger than standard `long long` limits by manipulating them as strings.
+### 🚪 Door Rules
 
-## Features
-- **Arbitrary Precision**: Can subtract numbers up to ~1000 digits.
-- **Negative Support**: Correctly calculates results where `B > A` (e.g., `10 - 20 = -10`).
-- **Manual Logic**: Implements "borrowing" and string manipulation manually without external BigInt libraries.
+| Door Name | Condition to Open | Failure Condition |
+| :--- | :--- | :--- |
+| **Door 1: The Prime Door** | `A` is Prime **AND** `A < B` | `A` is 1 or negative |
+| **Door 2: The Parity Trap** | `B` and `C` have different parity (one even, one odd) **AND** `(B + C)` is divisible by 3 | N/A |
+| **Door 3: The Devil's XOR** | **Exactly one** of the following is true:<br>• `A > 50`<br>• `C` is a perfect square<br>• `B` is between [10, 20] | Fails if >1 are true OR if 0 are true |
+
+---
+
+## 🛠️ How to Run
+To run any of these files, ensure you have a C++ compiler (like G++) installed.
+
+1. **Clone the repository:** 
+   git clone https://github.com/c47xd/cpp-practice.git
+2. **Compile a file (example):**
+ g++ bigint_subtraction.cpp -o bigint
+3. **Run the executable:**
+./bigint
 
 
 
 
-## Files  
-- [door_logic.cpp](door_logic.cpp)  
-- [Game_Of_life.cpp](pattern_generator.cpp)
-- [Bigint_subtraction](bigint_subtraction.cpp)
+
+---
+*Author: [c47xd]*
