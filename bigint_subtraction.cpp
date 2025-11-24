@@ -4,6 +4,7 @@ using namespace std;
 int main(){
     char A[1024]={};
     char B[1024]={};
+    cout<<"Enter two numbers : \n";
     cin>>A;
     cin>>B;
     
@@ -22,11 +23,11 @@ int main(){
         for(int i = 0 ; i < lenA-lenB ; i++){
             reversedB[strlen(reversedB)] = '0';
         }
-        reversedB[lenA] = '\0';
+        reversedB[lenA+1] = '\0';
         for(int i = 0 ; i < strlen(reversedB) ; i++){
             B[i] = (int)reversedB[strlen(reversedB)-1-i];
         }
-        B[lenA] = '\0'; 
+        B[lenA+1] = '\0'; 
     }
     
     if(lenB > lenA){
@@ -38,12 +39,12 @@ int main(){
         for(int i = 0 ; i < lenB-lenA ; i++){
             reversedA[strlen(reversedA)] = '0';
         }
-        reversedA[lenB] = '\0';
+        reversedA[lenB+1] = '\0';
 
         for(int i = 0 ; i < strlen(reversedA) ; i++){
             A[i] = reversedA[strlen(reversedA)-1-i];
         }
-        A[lenB] = '\0'; 
+        A[lenB+1] = '\0'; 
     }
     
     lenA = strlen(A);
@@ -53,7 +54,7 @@ int main(){
     //Subtraction logic
 
     int temp1, temp2, borrow;
-    char tempArr[lenA*lenB] = {};
+    char tempArr[lenA+50] = {};
     borrow = 0;
     bool isAbigger = false , isBbigger = false;
     for(int i = 0 ; i < strlen(A) ; i++){
@@ -93,7 +94,7 @@ int main(){
             }
         }
     } 
-    
+    cout<<"The answer is : \n";
     tempArr[lenA] = '\0';
     int no0index = 0,i=lenA;
     while(tempArr[i] == 0 && i>0){no0index++;i--;}
@@ -107,6 +108,6 @@ int main(){
             cout<<(int)tempArr[i];
         }
     }
-    
+    cout<<endl;
     return 0;
 }
